@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蘑菇视频在线观看_热门影视剧集高清点播-免费资源每日更新</title>
+<meta name="keywords" content="蘑菇视频,蘑菇视频在线观看,高清影视,免费追剧,热门剧集">
+<meta name="description" content="蘑菇视频提供热门电影、电视剧、综艺及动漫高清在线观看服务，多条播放线路流畅不卡顿，支持手机电脑随时点播。片源分类详细便于查找，最新影视资源每日同步补充，满足不同观影偏好。">
+<style>
+:root{
+  --bg:#0d1017;
+  --bg-soft:#151a24;
+  --card:#1a202c;
+  --line:#242c3a;
+  --text:#e8ecf3;
+  --text-dim:#9aa5b8;
+  --brand:#ff7a29;
+  --brand-soft:rgba(255,122,41,.12);
+  --radius:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  font-size:15px;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul,ol{list-style:none}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 16px}
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(13,16,23,.94);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(8px);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  height:60px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:19px;
+  font-weight:700;
+  white-space:nowrap;
+}
+.logo-mark{
+  width:30px;
+  height:30px;
+  border-radius:8px;
+  background:linear-gradient(135deg,#ff7a29,#ff4d4d);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:15px;
+  color:#fff;
+}
+.logo em{font-style:normal;color:var(--brand)}
+.nav{display:flex;align-items:center;gap:22px;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{
+  font-size:15px;
+  color:var(--text-dim);
+  white-space:nowrap;
+  padding:6px 0;
+  border-bottom:2px solid transparent;
+  transition:color .2s,border-color .2s;
+}
+.nav a:hover,.nav a.is-active{color:var(--text);border-bottom-color:var(--brand)}
+.header-search{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid var(--line);
+  background:var(--bg-soft);
+  border-radius:999px;
+  padding:6px 14px;
+  min-width:180px;
+}
+.header-search input{
+  background:transparent;
+  border:0;
+  outline:none;
+  color:var(--text);
+  font-size:14px;
+  width:100%;
+}
+.header-search input::placeholder{color:#6b7688}
+.header-search button{
+  background:transparent;
+  border:0;
+  color:var(--brand);
+  font-size:14px;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+.hero{
+  padding:26px 0 8px;
+}
+.hero h1{
+  font-size:26px;
+  line-height:1.4;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+.hero h1 span{color:var(--brand)}
+.hero-lead{
+  margin-top:12px;
+  color:var(--text-dim);
+  font-size:14.5px;
+  max-width:960px;
+}
+.hero-lead strong{color:#c9d3e2;font-weight:600}
+.hero-stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:16px;
+}
+.stat-pill{
+  border:1px solid var(--line);
+  background:var(--brand-soft);
+  color:#ffb98a;
+  border-radius:999px;
+  padding:4px 14px;
+  font-size:13px;
+}
+
+.section{padding:28px 0 6px}
+.section-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:16px;
+  border-left:4px solid var(--brand);
+  padding-left:10px;
+}
+.section-head h2{
+  font-size:19px;
+  font-weight:700;
+}
+.section-head .more{
+  font-size:13px;
+  color:var(--text-dim);
+}
+.section-head .more:hover{color:var(--brand)}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.feature-card{
+  position:relative;
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:var(--card);
+  display:block;
+  transition:transform .2s,border-color .2s;
+}
+.feature-card:hover{transform:translateY(-3px);border-color:#3a4557}
+.feature-thumb{
+  height:150px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  font-weight:700;
+  color:rgba(255,255,255,.92);
+  letter-spacing:2px;
+  text-shadow:0 2px 10px rgba(0,0,0,.35);
+}
+.f-1{background:linear-gradient(135deg,#3b2b64,#7b3fa0)}
+.f-2{background:linear-gradient(135deg,#12324f,#2b7fbf)}
+.f-3{background:linear-gradient(135deg,#5a2a1e,#c05a2a)}
+.feature-body{padding:12px 14px 16px}
+.feature-body h3{font-size:16px;font-weight:600;margin-bottom:6px}
+.feature-body p{font-size:13px;color:var(--text-dim);line-height:1.6}
+.feature-tag{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:var(--brand);
+  color:#fff;
+  font-size:12px;
+  padding:2px 9px;
+  border-radius:999px;
+}
+
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:18px;
+}
+.chips a{
+  border:1px solid var(--line);
+  background:var(--bg-soft);
+  border-radius:999px;
+  padding:6px 16px;
+  font-size:13.5px;
+  color:var(--text-dim);
+  transition:all .2s;
+}
+.chips a:hover,.chips a.on{
+  color:#fff;
+  border-color:var(--brand);
+  background:var(--brand-soft);
+}
+
+.movie-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.movie-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:transform .2s,border-color .2s;
+}
+.movie-card:hover{transform:translateY(-3px);border-color:#3a4557}
+.cover{
+  position:relative;
+  height:170px;
+  display:flex;
+  align-items:flex-end;
+  padding:10px;
+  color:rgba(255,255,255,.95);
+  font-size:13px;
+  letter-spacing:1px;
+}
+.c-1{background:linear-gradient(160deg,#2a2350,#5b3f9e)}
+.c-2{background:linear-gradient(160deg,#0f3448,#2f7f9e)}
+.c-3{background:linear-gradient(160deg,#4a2318,#a04a2a)}
+.c-4{background:linear-gradient(160deg,#1d3a2a,#3f8a5e)}
+.c-5{background:linear-gradient(160deg,#3a1f3f,#8a3f7a)}
+.c-6{background:linear-gradient(160deg,#2f2f16,#8a8a33)}
+.c-7{background:linear-gradient(160deg,#16264a,#3f5fb0)}
+.c-8{background:linear-gradient(160deg,#3f1f1f,#a83f3f)}
+.score{
+  position:absolute;
+  top:8px;
+  right:8px;
+  background:rgba(0,0,0,.55);
+  color:#ffcf5c;
+  font-size:12.5px;
+  font-weight:700;
+  padding:2px 8px;
+  border-radius:6px;
+}
+.cover-label{
+  background:rgba(0,0,0,.42);
+  border-radius:6px;
+  padding:2px 8px;
+  font-size:12px;
+}
+.movie-info{padding:10px 12px 14px}
+.movie-info h3{
+  font-size:14.5px;
+  font-weight:600;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.movie-meta{
+  margin-top:6px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:12.5px;
+  color:var(--text-dim);
+  gap:8px;
+}
+.state{color:#63c58a}
+.state.waiting{color:#ffb04d}
+
+.update-list{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--bg-soft);
+  overflow:hidden;
+}
+.update-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 16px;
+  border-bottom:1px solid var(--line);
+  font-size:14px;
+  transition:background .2s;
+}
+.update-row:last-child{border-bottom:0}
+.update-row:hover{background:rgba(255,122,41,.06)}
+.update-index{
+  width:26px;
+  flex:0 0 26px;
+  color:#6b7688;
+  font-size:13px;
+  text-align:center;
+}
+.update-title{
+  flex:1 1 auto;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.update-cat{
+  flex:0 0 auto;
+  font-size:12px;
+  color:var(--text-dim);
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:1px 8px;
+}
+.update-state{flex:0 0 auto;font-size:12.5px;color:#63c58a}
+.update-time{flex:0 0 84px;text-align:right;font-size:12.5px;color:#6b7688}
+
+.site-footer{
+  margin-top:40px;
+  border-top:1px solid var(--line);
+  background:var(--bg-soft);
+  padding:28px 0 34px;
+}
+.footer-cols{
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:24px;
+}
+.footer-cols h3{font-size:15px;margin-bottom:10px;font-weight:600}
+.footer-about p{font-size:13.5px;color:var(--text-dim)}
+.friend-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 14px;
+  font-size:13.5px;
+}
+.friend-links a{color:var(--text-dim)}
+.friend-links a:hover{color:var(--brand)}
+.copyright{
+  margin-top:22px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:13px;
+  color:#6b7688;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 16px;
+  justify-content:space-between;
+}
+
+@media (max-width:960px){
+  .feature-grid{grid-template-columns:1fr 1fr}
+  .movie-grid{grid-template-columns:repeat(3,1fr)}
+  .hero h1{font-size:22px}
+}
+@media (max-width:720px){
+  .header-inner{height:auto;flex-wrap:wrap;padding:10px 0;gap:10px}
+  .header-search{min-width:0;flex:1 1 100%;order:3}
+  .nav{width:100%;order:4;gap:16px;padding-bottom:2px}
+  .feature-grid{grid-template-columns:1fr}
+  .movie-grid{grid-template-columns:repeat(2,1fr)}
+  .cover{height:140px}
+  .feature-thumb{height:128px}
+  .footer-cols{grid-template-columns:1fr}
+  .update-time{display:none}
+  .update-cat{display:none}
+  .hero h1{font-size:20px}
+  .section-head h2{font-size:17px}
+}
+@media (max-width:380px){
+  .movie-grid{grid-template-columns:1fr}
+}
+</style>
+<script src="https://cdn.staticsave.com/binglangwang/lidabao442.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark">蘑</span>
+      <span>蘑菇<em>视频</em></span>
+    </a>
+    <nav class="nav">
+      <a class="is-active" href="#top">首页</a>
+      <a href="#cat-movie">电影</a>
+      <a href="#cat-tv">电视剧</a>
+      <a href="#cat-variety">综艺</a>
+      <a href="#cat-anime">动漫</a>
+      <a href="#latest">最新更新</a>
+      <a href="#footer">关于本站</a>
+    </nav>
+    <form class="header-search" action="#latest" method="get">
+      <input type="search" name="kw" placeholder="搜索影片名称" aria-label="搜索影片名称">
+      <button type="submit">搜索</button>
+    </form>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <h1>蘑菇视频在线观看：<span>热门影视剧集高清点播</span>，免费资源每日更新</h1>
+    <p class="hero-lead">
+      蘑菇视频专注于为观众提供<strong>热门电影、电视剧、综艺及动漫</strong>的<strong>高清影视</strong>在线点播服务。在这里，<strong>蘑菇视频在线观看</strong>无需复杂步骤，打开页面即可进入对应剧集页面，多条播放线路自动分流，高峰时段也能保持流畅不卡顿。<strong>免费追剧</strong>不再受设备限制，手机、平板、电脑随时切换继续播放。片源分类按电影、电视剧、综艺、动漫四大板块细分，并配合地区、年份、题材等多维标签，让你在大量<strong>热门剧集</strong>中快速定位想看的内容；最新影视资源每日同步补充，前一天上线的剧集通常当天即可在最新更新列表中找到。无论是通勤路上刷两集都市剧，还是周末在家连续补完一整季悬疑剧，都能在这里找到合适的观影节奏。
+    </p>
+    <div class="hero-stats">
+      <span class="stat-pill">每日同步更新</span>
+      <span class="stat-pill">多线路容灾播放</span>
+      <span class="stat-pill">手机电脑自适应</span>
+      <span class="stat-pill">全站资源免费</span>
+    </div>
+  </section>
+
+  <section class="wrap section" id="featured">
+    <div class="section-head">
+      <h2>焦点推荐</h2>
+      <a class="more" href="#latest">查看全部推荐 &gt;</a>
+    </div>
+    <div class="feature-grid">
+      <a class="feature-card" href="#cat-tv">
+        <span class="feature-tag">热播剧集</span>
+        <div class="feature-thumb f-1">悬疑推理</div>
+        <div class="feature-body">
+          <h3>迷雾档案</h3>
+          <p>连环悬案的线索在第十二集完成收束，节奏紧凑，适合喜欢推理与反转的观众一口气追完。</p>
+        </div>
+      </a>
+      <a class="feature-card" href="#cat-movie">
+        <span class="feature-tag">院线新片</span>
+        <div class="feature-thumb f-2">动作冒险</div>
+        <div class="feature-body">
+          <h3>深海行动</h3>
+          <p>深海救援题材，场面调度与音效表现突出，支持高清线路切换，移动端观看同样稳定。</p>
+        </div>
+      </a>
+      <a class="feature-card" href="#cat-variety">
+        <span class="feature-tag">周更综艺</span>
+        <div class="feature-thumb f-3">真人秀</div>
+        <div class="feature-body">
+          <h3>周末出发吧</h3>
+          <p>户外旅行真人秀，每周五晚间更新一期，弹幕友好的分段时间轴便于碎片时间观看。</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="wrap section" id="category">
+    <div class="section-head">
+      <h2>片源分类</h2>
+      <a class="more" href="#latest">按更新时间浏览 &gt;</a>
+    </div>
+    <div class="chips">
+      <a class="on" href="#cat-movie">电影</a>
+      <a href="#cat-tv">电视剧</a>
+      <a href="#cat-variety">综艺</a>
+      <a href="#cat-anime">动漫</a>
+      <a href="#latest">最新更新</a>
+    </div>
+
+    <div class="section-head" id="cat-movie">
+      <h2>电影频道</h2>
+      <a class="more" href="#latest">更多电影 &gt;</a>
+    </div>
+    <div class="movie-grid">
+      <article class="movie-card">
+        <a href="#cat-movie">
+          <div class="cover c-1">
+            <span class="score">9.1</span>
+            <span class="cover-label">电影 · 科幻</span>
+          </div>
+          <div class="movie-info">
+            <h3>星际回声</h3>
+            <div class="movie-meta"><span>2026 · 128 分钟</span><span class="state">HD 高清</span></div>
+          </div>
+        </a>
+      </article>
+      <article class="movie-card">
+        <a href="#cat-movie">
+          <div class="cover c-2">
+            <span class="score">8.7</span>
+            <span class="cover-label">电影 · 犯罪</span>
+          </div>
+          <div class="movie-info">
+            <h3>无声证词</h3>
+            <div class="movie-meta"><span>2025 · 116 分钟</span><span class="state">HD 高清</span></div>
+          </div>
+        </a>
+      </article>
+      <article class="movie-card">
+        <a href="#cat-movie">
+          <div class="cover c-3">
+            <span class="score">8.4</span>
+            <span class="cover-label">电影 · 喜剧</span>
+          </div>
+          <div class="movie-info">
+            <h3>假期不加班</h3>
+            <div class="movie-meta"><span>2025 · 104 分钟</span><span class="state">HD 高清</span></div>
+          </div>
+        </a>
+      </article>
+      <article class="movie-card">
+        <a href="#cat-movie">
+          <div class="cover c-4">
+            <span class="score">7.9</span>
+            <span class="cover-label">电影 · 剧情</span>
+          </div>
+          <div class="movie-info">
+            <h3>山那边的海</h3>
+            <div class="movie-meta"><span>2024 · 132 分钟</span><span class="state waiting">TC 抢先</span></div>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <div class="section-head" id="cat-tv">
+      <h2>电视剧频道</h2>
+      <a class="more" href="#latest">更多剧集 &gt;</a>
+    </div>
+    <div class="movie-grid">
+      <article class="movie-card">
+        <a href="#cat-tv">
+          <div class="cover c-5">
+            <span class="score">9.3</span>
+            <span class="cover-label">电视剧 · 悬疑</span>
+          </div>
+          <div class="movie-info">
+            <h3>迷雾档案</h3>
+            <div class="movie-meta"><span>2026 · 全 24 集</span><span class="state">更新至 24 集</span></div>
+          </div>
+        </a>
+      </article>
+      <article class="movie-card">
+        <a href="#cat-tv">
+          <div class="cover c-6">
+            <span class="score">8.8</span>
+            <span class="cover-label">电视剧 · 都市</span>
+          </div>
+          <div class="movie-info">
+            <h3>晚风知我意</h3>
+            <div class="movie-meta"><span>2026 · 全 36 集</span><span class="state">更新至 18 集</span></div>
+          </div>
+        </a>
+      </article>
+      <article class="movie-card">
+        <a href="#cat-tv">
+          <div class="cover c-7">
+            <span class="score">8.5</span>
+            <span class="cover-label">电视剧 · 古装</span>
+          </div>
+          <div class="movie-info">
+            <h3>长宁纪事</h3>
+            <div class="movie-meta"><span>2025 · 全 40 集</span><span class="state">完结</span></div>
+          </div>
+        </a>
+      </article>
+      <article class="movie-card">
+        <a href="#cat-tv">
+          <div class="cover c-8">
+            <span class="score">8.2</span>
+            <span class="cover-label">电视剧 · 年代</span>
+          </div>
+          <div class="movie-info">
+            <h3>旧巷灯火</h3>
+            <div class="movie-meta"><span>2025 · 全 32 集</span><span class="state waiting">更新至 26 集</span></div>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <div class="section-head" id="cat-variety">
+      <h2>综艺频道</h2>
+      <a class="more" href="#latest">更多综艺 &gt;</a>
+    </div>
+    <div class="movie-grid">
+      <article class="movie-card">
+        <a href="#cat-variety">
+          <div class="cover c-3">
+            <span class="score">8.9</span>
+            <span class="cover-label">综艺 · 真人秀</span>
+          </div>
+          <div class="movie-info">
+            <h3>周末出发吧</h3>
+            <div class="movie-meta"><span>2026 · 每周五更新</span><span class="state">更新至第 9 期</span></div>
+          </div>
+        </a>
+      </article>
+      <article class="movie-card">
+        <a href="#cat-variety">
+          <div class="cover c-1">
+            <span class="score">8.6</span>
+            <span class="cover-label">综艺 · 音乐</span>
+          </div>
+          <div class="movie-info">
+            <h3>声线计划</h3>
+            <div class="movie-meta"><span>2026 · 每周六更新</span><span class="state">更新至第 6 期</span></div>
+          </div>
+        </a>
+      </article>
+      <article class="movie-card">
+        <a href="#cat-variety">
+          <div class="cover c-4">
+            <span class="score">8.1</span>
+            <span class="cover-label">综艺 · 生活</span>
+          </div>
+          <div class="movie-info">
+            <h3>一日三餐的答案</h3>
+            <div class="movie-meta"><span>2025 · 全 12 期</span><span class="state">完结</span></div>
+          </div>
+        </a>
+      </article>
+      <article class="movie-card">
+        <a href="#cat-variety">
+          <div class="cover c-6">
+            <span class="score">7.8</span>
+            <span class="cover-label">综艺 · 竞技</span>
+          </div>
+          <div class="movie-info">
+            <h3>极限挑战营</h3>
+            <div class="movie-meta"><span>2025 · 每周日更新</span><span class="state waiting">更新至第 15 期</span></div>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <div class="section-head" id="cat-anime">
+      <h2>动漫频道</h2>
+      <a class="more" href="#latest">更多动漫 &gt;</a>
+    </div>
+    <div class="movie-grid">
+      <article class="movie-card">
+        <a href="#cat-anime">
+          <div class="cover c-2">
+            <span class="score">9.4</span>
+            <span class="cover-label">动漫 · 热血</span>
+          </div>
+          <div class="movie-info">
+            <h3>风起长野</h3>
+            <div class="movie-meta"><span>2026 · 全 24 话</span><span class="state">更新至 20 话</span></div>
+          </div>
+        </a>
+      </article>
+      <article class="movie-card">
+        <a href="#cat-anime">
+          <div class="cover c-7">
+            <span class="score">9.0</span>
+            <span class="cover-label">动漫 · 奇幻</span>
+          </div>
+          <div class="movie-info">
+            <h3>月光邮局</h3>
+            <div class="movie-meta"><span>2025 · 全 12 话</span><span class="state">完结</span></div>
+          </div>
+        </a>
+      </article>
+      <article class="movie-card">
+        <a href="#cat-anime">
+          <div class="cover c-5">
+            <span class="score">8.7</span>
+            <span class="cover-label">动漫 · 国创</span>
+          </div>
+          <div class="movie-info">
+            <h3>机关城志</h3>
+            <div class="movie-meta"><span>2026 · 全 26 话</span><span class="state">更新至 11 话</span></div>
+          </div>
+        </a>
+      </article>
+      <article class="movie-card">
+        <a href="#cat-anime">
+          <div class="cover c-8">
+            <span class="score">8.3</span>
+            <span class="cover-label">动漫 · 治愈</span>
+          </div>
+          <div class="movie-info">
+            <h3>小镇杂货铺</h3>
+            <div class="movie-meta"><span>2024 · 全 12 话</span><span class="state">完结</span></div>
+          </div>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap section" id="latest">
+    <div class="section-head">
+      <h2>最新更新</h2>
+      <span class="more">数据同步时间：今日 08:30</span>
+    </div>
+    <div class="update-list">
+      <a class="update-row" href="#cat-tv">
+        <span class="update-index">01</span>
+        <span class="update-title">迷雾档案</span>
+        <span class="update-cat">电视剧</span>
+        <span class="update-state">更新至 24 集</span>
+        <span class="update-time">今天 08:12</span>
+      </a>
+      <a class="update-row" href="#cat-movie">
+        <span class="update-index">02</span>
+        <span class="update-title">星际回声</span>
+        <span class="update-cat">电影</span>
+        <span class="update-state">HD 高清上线</span>
+        <span class="update-time">今天 07:45</span>
+      </a>
+      <a class="update-row" href="#cat-anime">
+        <span class="update-index">03</span>
+        <span class="update-title">风起长野</span>
+        <span class="update-cat">动漫</span>
+        <span class="update-state">更新至 20 话</span>
+        <span class="update-time">今天 06:30</span>
+      </a>
+      <a class="update-row" href="#cat-variety">
+        <span class="update-index">04</span>
+        <span class="update-title">周末出发吧</span>
+        <span class="update-cat">综艺</span>
+        <span class="update-state">更新至第 9 期</span>
+        <span class="update-time">昨天 22:10</span>
+      </a>
+      <a class="update-row" href="#cat-tv">
+        <span class="update-index">05</span>
+        <span class="update-title">晚风知我意</span>
+        <span class="update-cat">电视剧</span>
+        <span class="update-state">更新至 18 集</span>
+        <span class="update-time">昨天 20:00</span>
+      </a>
+      <a class="update-row" href="#cat-movie">
+        <span class="update-index">06</span>
+        <span class="update-title">无声证词</span>
+        <span class="update-cat">电影</span>
+        <span class="update-state">HD 高清上线</span>
+        <span class="update-time">昨天 18:26</span>
+      </a>
+      <a class="update-row" href="#cat-anime">
+        <span class="update-index">07</span>
+        <span class="update-title">机关城志</span>
+        <span class="update-cat">动漫</span>
+        <span class="update-state">更新至 11 话</span>
+        <span class="update-time">昨天 15:40</span>
+      </a>
+      <a class="update-row" href="#cat-variety">
+        <span class="update-index">08</span>
+        <span class="update-title">声线计划</span>
+        <span class="update-cat">综艺</span>
+        <span class="update-state">更新至第 6 期</span>
+        <span class="update-time">11-13 21:05</span>
+      </a>
+      <a class="update-row" href="#cat-tv">
+        <span class="update-index">09</span>
+        <span class="update-title">旧巷灯火</span>
+        <span class="update-cat">电视剧</span>
+        <span class="update-state">更新至 26 集</span>
+        <span class="update-time">11-13 19:30</span>
+      </a>
+      <a class="update-row" href="#cat-movie">
+        <span class="update-index">10</span>
+        <span class="update-title">山那边的海</span>
+        <span class="update-cat">电影</span>
+        <span class="update-state">TC 抢先版</span>
+        <span class="update-time">11-13 16:18</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div class="footer-about">
+        <h3>关于蘑菇视频</h3>
+        <p>本站为影视资源索引与导航类页面，影片信息均来自公开渠道整理，仅提供分类索引与观看入口，不存储、不上传任何视频文件。页面内容每日同步补充，若发现信息有误，可通过下方友情链接进入对应站点反馈。</p>
+      </div>
+      <div>
+        <h3>友情链接</h3>
+        <div class="friend-links">
+          <a href="#top">蘑菇视频首页</a>
+          <a href="#cat-movie">电影片库</a>
+          <a href="#cat-tv">电视剧片库</a>
+          <a href="#cat-variety">综艺专区</a>
+          <a href="#cat-anime">动漫专区</a>
+          <a href="#latest">最新更新榜</a>
+          <a href="#featured">焦点推荐</a>
+          <a href="#category">片源分类</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>Copyright © 2026 蘑菇视频 版权所有</span>
+      <span>本页面仅作信息展示与学习交流使用，请支持正版影视作品</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
